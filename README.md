@@ -8,15 +8,29 @@
  >
  > Change AppDataSource in index.ts file.
 
+If the database does not have a table ready, try 
+synchronize=true.
+```typescript
+  const AppDataSource = new DataSource({
+    type: 'mysql',
+    database: 'name',
+    username: 'root',
+    password: '',
+    logging: true,
+    synchronize: true,
+    entities
+  });
+```
+
  
  Dev mode
- ```
+ ```shell
   npm install
   npm run dev
  ```
  
  Production mode
- ```
+ ```shell
   npm install
   npm run build
   npm start
